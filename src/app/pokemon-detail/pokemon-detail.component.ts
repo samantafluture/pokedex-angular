@@ -32,4 +32,11 @@ export class PokemonDetailComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+
+  save(): void {
+    if (this.pokemon) {
+      this.pokemonService.updatePokemon(this.pokemon)
+        .subscribe(() => this.goBack());
+    }
+  }
 }
