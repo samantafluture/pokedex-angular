@@ -2,17 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable, Subject } from 'rxjs';
 
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
-import { Pokemon } from '../pokemon';
-import { PokemonService } from '../pokemon.service';
+import { Pokemon } from 'src/app/interfaces/pokemon';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-search',
   templateUrl: './pokemon-search.component.html',
-  styleUrls: [ './pokemon-search.component.css' ]
+  styleUrls: ['./pokemon-search.component.css'],
 })
 export class PokemonSearchComponent implements OnInit {
   pokemons$!: Observable<Pokemon[]>;
@@ -34,7 +32,7 @@ export class PokemonSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.pokemonService.searchPokemons(term)),
+      switchMap((term: string) => this.pokemonService.searchPokemons(term))
     );
   }
 }

@@ -1,4 +1,4 @@
-import { Pokemon } from "./pokemon";
+import { Pokemon } from "../interfaces/pokemon";
 
 export const POKEMONS: Pokemon[] = [
   { id: 25, name: 'pikachu', weight: 60, height: 4 },

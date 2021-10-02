@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { POKEMONS } from './mock-pokemons';
-import { Pokemon } from './pokemon';
+import { POKEMONS } from '../mocks/mock-pokemons';
+import { Pokemon } from '../interfaces/pokemon';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';

@@ -1,6 +1,6 @@
-import { PokemonService } from './../pokemon.service';
+import { PokemonService } from 'src/app/services/pokemon.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { Pokemon } from 'src/app/interfaces/pokemon';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 

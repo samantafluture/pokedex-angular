@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Pokemon } from './pokemon';
+import { Pokemon } from '../interfaces/pokemon';
 
 @Injectable({
   providedIn: 'root',

@@ -3,34 +3,34 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { PokemonsComponent } from './pokemons/pokemons.component';
-import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
-import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
-import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { PokemonsComponent } from './components/pokemons/pokemons.component';
+import { PokemonSearchComponent } from './components/pokemon-search/pokemon-search.component';
+import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonsComponent,
-    PokemonDetailComponent,
-    MessagesComponent,
     DashboardComponent,
+    MessagesComponent,
+    PokemonsComponent,
     PokemonSearchComponent,
+    PokemonDetailComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
